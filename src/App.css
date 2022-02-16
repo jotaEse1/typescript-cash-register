@@ -1,0 +1,223 @@
+:root {
+  --background: #fff;
+  --text-color: #000;
+  --border-color: #000;
+  --detail-color: #0007;
+  --line-chart-color: #0002;
+  --boxShadow-color: #000;
+  --transition-details: .4s;
+}
+
+[data-theme = 'dark']{
+  --background: #000;
+  --text-color: #fff;
+  --border-color: #fff;
+  --detail-color: #fff7;
+  --line-chart-color: #fff2;
+  --boxShadow-color: transparent;
+  --transition-details: .4s;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  color: var(--text-color);
+  font-family:  'Barlow', sans-serif;
+  transition: var(--transition-details);
+}
+
+.app {
+  position: relative;
+  min-height: 100vh;
+  background: var(--background);
+  transition: var(--transition-details);
+}
+
+h1 {
+  text-align: center;
+  padding: 0.5rem 0rem;
+  font-family: 'Staatliches', cursive;
+  padding-bottom: 0rem;
+}
+
+.change-theme {
+  position: absolute;
+  top: 1.5vh;
+  right: 3vw;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+
+}
+
+.main_container {
+  width: 100%;
+  min-height: 92vh;
+  padding: 0.5rem 2rem;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  border-top: 2px solid var(--border-color);
+  transition: var(--transition-details);
+}
+
+.main_left-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.transaction {
+  width: max-content;
+  padding: 0.5rem;
+}
+
+.transaction > form {
+  height: 25vh;
+  width: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.transaction > form > input {
+  height: 1.5rem;
+  border: none;
+  border-bottom: 2px solid var(--detail-color);
+  background-color: transparent;
+  transition: var(--transition-details);
+}
+
+.transaction > form > input:focus {
+  outline: none;
+  border-bottom: 2px solid var(--border-color);
+  transition: var(--transition-details);
+}
+
+.transaction > form > button {
+  height: 1.5rem;
+  padding: 0.2rem;
+  background-color: transparent;
+  border: 2px solid var(--border-color);
+  transition: var(--transition-details);
+}
+
+.transaction > form > button:hover {
+  background-color: var(--text-color);
+  border: 2px solid transparent;
+  color: var(--background);
+  cursor: pointer;
+  transition: var(--transition-details);
+}
+
+.chart_container {
+  width: 40vw;
+  height: 50vh;
+}
+
+.table_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-left: 2px solid var(--border-color);
+  transition: var(--transition-details);
+}
+
+.table_container > table {
+  width: 35vw;
+  height: 80vh;
+  border-collapse: collapse;
+  border: 2px solid transparent;
+}
+
+.change-details > table {
+  width: 25vw;
+  height: max-content;
+  border-collapse: collapse;
+  border: 2px solid transparent;
+}
+
+thead > tr{
+  text-align: center;
+  border-bottom: 2px solid var(--border-color);
+  transition: var(--transition-details);
+}
+
+tbody > tr {
+  text-align: center;
+  border-bottom: 2px solid var(--detail-color);
+  transition: var(--transition-details);
+}
+
+tfoot > tr {
+  text-align: center;
+ 
+}
+
+th, td {
+  padding: 0.4rem;
+}
+
+tr > td > button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  margin: 0rem 0.2rem;
+}
+
+/*chart */
+.chart_container > svg > rect {
+  fill: var(--border-color);
+}
+
+line {
+  stroke: var(--line-chart-color);
+}
+
+  
+
+@media (max-width: 290px){
+  .change-theme{
+    right: 0.5vw;
+    top: 1.7vh;
+  }
+}
+
+@media (max-width: 700px){
+  .main_container {
+    grid-template-columns: none;
+    border-top: 2px solid var(--border-color);
+    transition: var(--transition-details);
+    gap: 1rem 1rem;
+  }
+
+  .table_container {
+    border-left: none;
+    border-top: 2px solid var(--border-color);
+    transition: var(--transition-details);
+  }
+
+  .table_container > table {
+    width: 70vw;
+  }
+
+  .chart_container {
+    width: 80vw;
+  }
+}
+
+
+/*Disable arrows in input type number*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}

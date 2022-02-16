@@ -1,0 +1,71 @@
+[data-theme = 'dark']{
+    --background: #000;
+    --text-color: #fff;
+    --border-color: #fff;
+    --detail-color: #fff7;
+    --boxShadow-color: transparent;
+    --transition-details: all .4s;
+}
+
+.plus-minus_container {
+    position: fixed;
+    z-index: 20;
+    top: 0;
+    right: 0;
+    min-height: 100vh;
+    width: 100vw;
+    background: var(--detail-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.plus-minus {
+    width: 15rem;
+    height: 8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: var(--background);
+    outline: 2px solid var(--border-color);
+    box-shadow: 0px 0px 25px 0px var(--boxShadow-color);
+
+}
+
+.plus-minus > form > input {
+  height: 1.5rem;
+  border: none;
+  border-bottom: 2px solid var(--detail-color);
+  background-color: transparent;
+  transition: var(--transition-details);
+}
+
+.plus-minus > form > input:focus {
+  outline: none;
+  border-bottom: 2px solid var(--border-color);
+  transition: var(--transition-details);
+  }
+
+.plus-minus > form > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 0.5rem;
+    width: 100%;
+}
+
+.plus-minus > form > div > button {
+  height: 2rem;
+  width: 2rem;
+  padding: 0.2rem;
+  background-color: transparent;
+  border: none;
+  transition: var(--transition-details);
+  cursor: pointer;
+}
+
+.plus-minus > form > div > button > svg {
+  font-size: 1.2rem;
+}
